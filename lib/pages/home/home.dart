@@ -10,7 +10,20 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Text('Home screen'),
+        child: Column(
+          children: <Widget>[
+            Center(
+              child: RaisedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/location');
+                },
+                icon: Icon(Icons.location_on),
+                label: Text("Move to location screen"),
+                color: Colors.amber,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

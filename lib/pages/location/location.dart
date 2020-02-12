@@ -9,6 +9,10 @@ class _LocationState extends State<Location> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Searching Location'),
+        backgroundColor: Colors.pink,
+      ),
       body: Text('location screen'),
     );
   }
