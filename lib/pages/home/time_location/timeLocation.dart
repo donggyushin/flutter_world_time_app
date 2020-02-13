@@ -32,6 +32,7 @@ class _TimeAndLocationState extends State<TimeAndLocation> {
               style: TextStyle(
                 fontSize: 22,
                 letterSpacing: 1.4,
+                color: Colors.white,
               ),
             ),
           ],
@@ -43,6 +44,7 @@ class _TimeAndLocationState extends State<TimeAndLocation> {
             style: TextStyle(
               fontSize: 50.0,
               fontWeight: FontWeight.w300,
+              color: Colors.white,
             ))
       ],
     );

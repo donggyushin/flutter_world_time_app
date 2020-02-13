@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:world_time/models/worldtime.dart';
 import 'package:world_time/pages/home/home.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Loading extends StatefulWidget {
   static const RouteName = '/';
@@ -18,9 +19,11 @@ class _LoadingState extends State<Loading> {
     await worldTime.getTime();
     Navigator.pushReplacementNamed(context, Home.RouteName,
         arguments: HomeArguments(
-            location: worldTime.location,
-            flag: worldTime.flag,
-            time: worldTime.time));
+          location: worldTime.location,
+          flag: worldTime.flag,
+          time: worldTime.time,
+          isDayToday: worldTime.isDayTime,
+        ));
   }
 
   @override
@@ -32,8 +35,12 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue,
       body: Center(
-        child: Text("Loading..."),
+        child: SpinKitWanderingCubes(
+          color: Colors.white,
+          size: 50,
+        ),
       ),
     );
   }
